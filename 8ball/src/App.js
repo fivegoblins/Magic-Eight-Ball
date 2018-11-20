@@ -65,7 +65,7 @@ class App extends Component {
           />
           <button onClick={this.ask}>Ask</button>
         </form>
-       
+       <h3>{answer}</h3>
       </div>
     );
   }
