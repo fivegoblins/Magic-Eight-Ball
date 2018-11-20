@@ -54,17 +54,27 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
+        <div className='ask-div'>
+         <header className="header">
           Ask the Magic Eight Ball
-        </header>>
-          <input 
+          </header>
+            <div className='question-div'>
+            <input
+            className='question-input'
             type='text'
             placeholder='Your Question'
             value={this.state.input}
             onChange={this.handleChange}
-          />
-          <button onClick={this.ask}>Ask</button>
-       <h3>{answer}</h3>
+           />
+            <button 
+              onClick={this.ask}
+              className='ask-button'
+            >
+              Ask
+            </button>
+          </div>
+          <h3 className='answer'>{answer}</h3>
+        </div>
       </div>
     );
   }
