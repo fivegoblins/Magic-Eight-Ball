@@ -50,11 +50,22 @@ class App extends Component {
     ];
 
     const answer = responses[this.state.random];
+
     return (
       <div className="App">
         <header className="App-header">
           Ask the Magic Eight Ball
         </header>
+        <form>
+          <input 
+            type='text'
+            placeholder='Your Question'
+            value={this.state.input}
+            onChange={this.handleChange}
+          />
+          <button onClick={this.ask}>Ask</button>
+        </form>
+       
       </div>
     );
   }
