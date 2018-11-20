@@ -15,14 +15,15 @@ class App extends Component {
   ask() {
     if (this.state.input) {
       this.setState({
-        input: '',
-        random: Math.floor(Math.random() * 20)
+        random: Math.floor(Math.random() * 20),
+        input: ''
       });
     }
   }
 
-  handleChange(e) {
-    this.setState({input: e.target.value});
+  handleChange(event) {
+    event.preventDefault();
+    this.setState({input: event.target.value});
   }
 
   render() {
@@ -55,8 +56,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           Ask the Magic Eight Ball
-        </header>
-        <form>
+        </header>>
           <input 
             type='text'
             placeholder='Your Question'
@@ -64,7 +64,6 @@ class App extends Component {
             onChange={this.handleChange}
           />
           <button onClick={this.ask}>Ask</button>
-        </form>
        <h3>{answer}</h3>
       </div>
     );
